@@ -2,7 +2,8 @@ p style="color: green"
   = notice
 = turbo_frame_tag 'room' do
   h2 Name: #{@room.name}
-  = render @room.messages
+  div id='messages'
+    = render @room.messages
 
   = turbo_frame_tag 'new_message', src: new_room_message_path(@room), target:'_top'
   ul
