@@ -7,15 +7,14 @@ class MessagesController < ApplicationController
 
   def create 
     @message = @room.messages.new(message_params)
+
     respond_to do |format|
-      format.turbo_stream
-      format.html do
-        if @message.save
-          redirect_to @room
-        else
-          render :new, status: :unprocessable_entity
-        end
+      if @message.save
+        format.html{redirect_to @room}
+      else
+        format.html{render :new, status: :unproccesable_entity}
       end
+      format.turbo_stream
     end
   end
 
