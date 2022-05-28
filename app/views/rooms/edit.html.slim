@@ -1,0 +1,9 @@
+h1 Editing room
+= turbo_frame_tag 'room' do
+  = render "form", room: @room
+  br/
+  ul
+    li
+      = link_to "Show this room", @room
+    li
+        = link_to "Back to rooms", rooms_path
