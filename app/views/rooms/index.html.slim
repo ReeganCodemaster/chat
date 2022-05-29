@@ -1,12 +1,13 @@
-p style="color: green"
- = notice
+div class='d-flex align-items-center justify-content-center'
+  p style="color: green"
+  = notice
+div class='d-flex align-items-center justify-content-center'
+  h1 Rooms
 
-h1 Rooms
-
-div id="rooms"
+div id="rooms" class='d-flex align-items-center justify-content-center'
   -@rooms.each do |room|
     = render room
-    p
-      = link_to "Show this room", room
-
-= link_to "New room", new_room_path
+  p
+    = link_to "Show this room", room
+div class='d-flex align-items-center justify-content-center'
+  = link_to "New room", new_room_path
