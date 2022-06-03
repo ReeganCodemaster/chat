@@ -16,8 +16,6 @@ p style="color: green"
         li
           = link_to "Edit this room", edit_room_path(@room)
         li
-          = link_to "Back to rooms", rooms_path, 'data-turbo-frame': '_top'
-        li
           = button_to "Destroy this room", @room, method: :delete, 'data-turbo-frame': '_top'
 
 
