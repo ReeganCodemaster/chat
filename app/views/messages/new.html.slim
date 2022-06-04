@@ -1,10 +1,7 @@
-div class='d-flex align-items-center justify-content-center'  
-  h1 New message
 = turbo_frame_tag 'new_message', target: '_top' do
-  = form_with model: [@message.room, @message],data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" } do |form|
-    div
-      = form.text_field :content
-    div 
-      = form.submit 'Send'
+    = form_with model: [@message.room, @message],data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" } do |form|
+        div class='new_message'
+          = form.text_field :content,class:'send-control'
+          = form.submit 'Send',class:'btn-send'
 
 = link_to 'Back', @message.room
