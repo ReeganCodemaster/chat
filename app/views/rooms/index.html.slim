@@ -1,7 +1,7 @@
 div class='sidenav'  
-    = link_to 'Create a new room', root_path(), class:'nav-link'
+    = link_to 'Create a new room', root_path()
     -@rooms.each do |room|
-      = link_to room.name, room_path(room), data: {'turbo_frame': 'chat'} ,class:'nav-link'
+      = link_to room.name, room_path(room), data: {'turbo_frame': 'chat'}
 
 = turbo_frame_tag 'chat' do
   = turbo_frame_tag 'new_room', src:new_room_path() , target:'_top'
