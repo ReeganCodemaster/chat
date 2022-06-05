@@ -7,7 +7,8 @@ class RoomsController < ApplicationController
   end
 
   def new
-    @room = Room.new
+    user = current_user
+    @room = user.rooms.new
   end
   def create
     @room = Room.new(room_params)
