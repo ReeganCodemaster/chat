@@ -15,6 +15,7 @@
  */
  @import "bootstrap";
 /* The sidebar menu */
+$main_green:#00897B;
 
 body {
   background-color: #BDBDBD;
@@ -26,7 +27,7 @@ body {
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #00897B; /* Black */
+  background-color:$main_green; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }
@@ -82,11 +83,17 @@ $message_height :2rem;
   font-size: large;
 }
 
+$header_height:2rem;
+
 .room-header {
   position: fixed;
-  right:0;
+  left:30%;
+  height: $header_height+1rem;
+  width: 100%;
+  background-color: $main_green;
 }
 
 #messages {
-  margin-bottom: $message_height;
+  padding-bottom: $message_height;
+  padding-top: $header_height+ 1rem;
 }
