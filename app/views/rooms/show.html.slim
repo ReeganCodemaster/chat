@@ -2,17 +2,17 @@
   = turbo_stream_from @room
 
   = turbo_frame_tag 'room' do
-    div class='d-flex align-items-center justify-content-center'
+    div class='room-header' 
       h2 Name: #{@room.name}
     div id='messages'
       = render @room.messages
-      = turbo_frame_tag 'new_message', src: new_room_message_path(@room), target:'_top'
-    div class='d-flex align-items-center justify-content-center'
-      ul
-        li
-          = link_to "Edit this room", edit_room_path(@room)
-        li
-          = button_to "Destroy this room", @room, method: :delete, 'data-turbo-frame': '_top'
+    = turbo_frame_tag 'new_message', src: new_room_message_path(@room), target:'_top'
+    / div class='d-flex align-items-center justify-content-center'
+    /   ul
+    /     li
+    /       = link_to "Edit this room", edit_room_path(@room)
+    /     li
+    /       = button_to "Destroy this room", @room, method: :delete, 'data-turbo-frame': '_top'
 
 
 

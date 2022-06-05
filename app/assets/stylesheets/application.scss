@@ -56,17 +56,21 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+$message_height :2rem;
 
 .new_message {
   position: fixed;
   bottom: 0;
   width: 70%;
   right:0;
+  height:$message_height;
 }
+
 .send-control {
   width:90%;
   font-size: large;
 }
+
 .btn-send {
   background-color:#198754;
   border: none;
@@ -75,5 +79,14 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: large
+  font-size: large;
+}
+
+.room-header {
+  position: fixed;
+  right:0;
+}
+
+#messages {
+  margin-bottom: $message_height;
 }
