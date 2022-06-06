@@ -26,10 +26,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_05_143742) do
   end
 
   create_table "rooms_users", id: false, force: :cascade do |t|
-    t.integer "users_id"
-    t.integer "rooms_id"
-    t.index ["rooms_id"], name: "index_rooms_users_on_rooms_id"
-    t.index ["users_id"], name: "index_rooms_users_on_users_id"
+    t.integer "user_id"
+    t.integer "room_id"
+    t.index ["room_id"], name: "index_rooms_users_on_room_id"
+    t.index ["user_id"], name: "index_rooms_users_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
