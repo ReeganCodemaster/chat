@@ -3,7 +3,8 @@
 
   = turbo_frame_tag 'room' do
     div class='room-header' 
-      h2 Name: #{@room.name}
+      p Name: #{@room.name}
+      p Admin: #{@room.users.first}
     div id='messages'
       = render @room.messages
     = turbo_frame_tag 'new_message', src: new_room_message_path(@room), target:'_top'
